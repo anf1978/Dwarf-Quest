@@ -42,8 +42,45 @@ const campaignRef = ref(db, CAMPAIGN_PATH);
 function fromFirebaseShape(data) {
   if (!data) return null;
   const playersObj = data.players || {};
-  const players = Object.keys(playersObj).map((id) => ({ id, ...playersObj[id] }));
-  return { ...data, players };
+  // Firebase collapses empty objects/arrays to null/undefined on write — a brand-new campaign's
+  // deliberately-empty fields (an empty warband, an empty rounds log, etc.) come back missing
+  // entirely rather than as {} or []. Backfill every field that could plausibly start empty so
+  // the rest of the app never has to know this quirk exists.
+  const players = Object.keys(playersObj).map((id) => {
+    const p = playersObj[id] || {};
+    return {
+      id,
+      ...p,
+      warband: p.warband || [],
+      requisition: p.requisition ?? 0,
+      loadout: {
+        weapon: p.loadout?.weapon || [],
+        armor: p.loadout?.armor || [],
+        skill: p.loadout?.skill || [],
+      },
+    };
+  });
+
+  return {
+    ...data,
+    players,
+    teams: data.teams || [],
+    regions: data.regions || [],
+    turns: data.turns || [],
+    currentTurn: data.currentTurn ?? 0,
+    totals: data.totals || { a: 0, b: 0 },
+    log: data.log || [],
+    rounds: data.rounds || {},
+    finale: data.finale || {},
+    barracks: data.barracks || [],
+    timer: data.timer || { type: null, totalSeconds: 0, endAt: null, paused: false, remainingAtPause: null },
+    catalog: {
+      weapon: data.catalog?.weapon || [],
+      armor: data.catalog?.armor || [],
+      skill: data.catalog?.skill || [],
+      specialRule: data.catalog?.specialRule || [],
+    },
+  };
 }
 
 function toFirebaseShape(shared) {
