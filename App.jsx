@@ -387,7 +387,7 @@ function IdentityGate({ shared, onChoose, onRefresh }) {
   return (
     <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 50% -10%, #241f1a 0%, #171310 55%, #0f0d0b 100%)", color: "#E9DFC8", display: "flex", flexDirection: "column", alignItems: "center", padding: "48px 20px" }}>
       <GlobalStyle />
-      <Crown size={32} color="#C9A227" />
+            <img src="/dq-rune-hero.png" alt="Dwarf Quest" style={{ height: 96, width: "auto", filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.5))", marginBottom: 6 }} />
       <h1 className="dq-display" style={{ fontSize: 24, margin: "10px 0 2px", color: "#F0E6C8" }}>DWARF QUEST</h1>
       <div className="dq-mono" style={{ fontSize: 11, color: "#8A7C5C", marginBottom: 32, letterSpacing: "0.08em" }}>WHO GOES THERE?</div>
 
