@@ -389,7 +389,7 @@ function IdentityGate({ shared, onChoose, onRefresh }) {
       <GlobalStyle />
             <img src="/dq-rune-hero.png" alt="Dwarf Quest" style={{ height: 96, width: "auto", filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.5))", marginBottom: 6 }} />
       <h1 className="dq-display" style={{ fontSize: 24, margin: "10px 0 2px", color: "#F0E6C8" }}>DWARF QUEST</h1>
-      <div className="dq-mono" style={{ fontSize: 11, color: "#8A7C5C", marginBottom: 32, letterSpacing: "0.08em" }}>WHO GOES THERE?</div>
+      <div className="dq-mono" style={{ fontSize: 11, color: "#8A7C5C", marginBottom: 32, letterSpacing: "0.08em" }}>Testing123</div>
 
       {!gmMode ? (
         <button onClick={() => setGmMode(true)} className="dq-panel" style={{ width: "100%", maxWidth: 360, padding: "16px 18px", borderRadius: 8, marginBottom: 24, cursor: "pointer", color: "#F0E6C8", display: "flex", alignItems: "center", gap: 12 }}>
