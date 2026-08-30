@@ -393,7 +393,7 @@ function IdentityGate({ shared, onChoose, onRefresh }) {
 
       {!gmMode ? (
         <button onClick={() => setGmMode(true)} className="dq-panel" style={{ width: "100%", maxWidth: 360, padding: "16px 18px", borderRadius: 8, marginBottom: 24, cursor: "pointer", color: "#F0E6C8", display: "flex", alignItems: "center", gap: 12 }}>
-          <Crown size={20} color="#C9A227" />
+                    <img src={`${import.meta.env.BASE_URL}dq-rune-hero.png`} alt="" style={{ height: 32, width: "auto" }} />
           <div style={{ textAlign: "left" }}>
             <div className="dq-display" style={{ fontSize: 14, fontWeight: 700 }}>Command Console</div>
             <div className="dq-mono" style={{ fontSize: 10.5, color: "#8A7C5C" }}>For any of the day's GMs — full campaign control</div>
