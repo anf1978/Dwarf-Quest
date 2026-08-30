@@ -452,7 +452,7 @@ function ConsoleHeader({ title, subtitle, right, onSwitch }) {
   return (
     <div style={{ borderBottom: "1px solid rgba(201,162,39,0.2)", padding: "16px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
-        <Crown size={22} color="#C9A227" style={{ flexShrink: 0 }} />
+                <img src={`${import.meta.env.BASE_URL}dq-rune-hero.png`} alt="" style={{ height: 28, width: "auto", flexShrink: 0 }} />
         <div style={{ minWidth: 0 }}>
           <div className="dq-display" style={{ fontSize: 17, fontWeight: 700, color: "#F0E6C8", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{title}</div>
           <div className="dq-mono" style={{ fontSize: 9.5, color: "#8A7C5C", letterSpacing: "0.06em" }}>{subtitle}</div>
